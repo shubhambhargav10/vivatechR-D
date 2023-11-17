@@ -1,66 +1,62 @@
-  .task-completed,
-  .task-pending {
-    border-bottom-style: solid;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(42, 40, 40);
+.task-list-container {
+    max-width: 600px;
+    margin: auto;
   }
   
+  .task-list-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
   
-  .task-list-item {
-    display: flex;
-    align-items: center;
+  .task-list {
+    list-style: none;
+    padding: 0;
   }
   
   .task-item {
-    font-size: 18px;
-    color: greenyellow;
-    padding-left: 20px;
-  }
-  
-  .task-item p {
-    margin-bottom: 0px;
-  }
-  
-  .task-item del {
-    color: greenyellow;
-  }
-  
-
-  
-  .task-mark-icon {
-    cursor: pointer;
-    font-size: 27px;
-  }
-  
-  .task-mark-icon:hover {
-    color: blue;
-  }
-  
-  .task-edit-delete-icon {
-    padding: 0px 10px;
-  }
-  
-  .task-icons {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   
-  .delete-icon,
-  .edit-icon {
+  .edit-task {
+    flex: 1;
+  }
+  
+  .edit-task-input {
+    width: 70%;
+    margin-right: 10px;
+  }
+  
+  .update-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
     cursor: pointer;
-    font-size: 24px;
-    margin-right: 5px;
+  }
+  
+  .task-text {
+    flex: 1;
+  }
+  
+  .task-actions {
     margin-left: 10px;
-    color: greenyellow;
   }
   
-  .edit-icon:hover {
-    color: darkgoldenrod;
+  .edit-button,
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
   }
   
-  .delete-icon:hover {
-    color: darkred;
+  .delete-button {
+    background-color: #d9534f;
   }
+  

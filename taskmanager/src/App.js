@@ -1,13 +1,13 @@
-import './App.css';
-import Task from './components/Task';
+import React from 'react';
+import AllRoutes from './AllRoutes';
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">    
-    <Task/>
+    <div>
+      <h1>Task Management App</h1>
+      <AllRoutes/>
     </div>
   );
-}
+};
 
 export default App;
