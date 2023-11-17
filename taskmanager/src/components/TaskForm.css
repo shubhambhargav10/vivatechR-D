@@ -11,9 +11,9 @@
   
   .add-task-header {
     margin-bottom: 50px;
-    color: #007bff;
+    color: #10c2c1;
     font-size: xx-large;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 
   }
   
@@ -29,7 +29,7 @@
     margin-right: 14px;
     width: 100%;
     font-size: large;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .add-task-button,.check-your-tasks {
@@ -42,7 +42,7 @@
     transition: background-color 0.3s;
     border-radius: 7px;
     font-size: medium;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
   }
   .check-your-tasks{
     margin-top: 10px;
