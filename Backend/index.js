@@ -14,6 +14,14 @@ app.get('/alltasks', async (req, res) => {
         res.status(500).send(`Internal server error: ${err}`);
     }
 });
+app.get('/', async (req, res) => {
+    try {
+        const data = await taskModel.find();
+        res.status(200).send(data);
+    } catch (err) {
+        res.status(500).send(`Internal server error: ${err}`);
+    }
+});
 
 app.post('/addtask', async (req, res) => {
     const newData = req.body;
