@@ -3,15 +3,18 @@
     margin: auto;
     text-align: center;
     padding: 20px;
-    background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
   }
   
   .add-task-header {
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     color: #007bff;
+    font-size: xx-large;
+    font-family: cursive;
+
   }
   
   .task-input-container {
@@ -21,18 +24,27 @@
   
   .task-input {
     flex: 1;
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    margin-right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 14px;
+    width: 100%;
+    font-size: large;
+    font-family: cursive;
   }
   
-  .add-task-button {
-    background-color: #28a745;
+  .add-task-button,.check-your-tasks {
+    background-color: #0d4143;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 10px 24px;
     cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+    border-radius: 7px;
+    font-size: medium;
+    font-family: cursive;
+  }
+  .check-your-tasks{
+    margin-top: 10px;
   }
   

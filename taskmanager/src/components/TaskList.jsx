@@ -3,8 +3,12 @@ import axios from 'axios';
 import './TaskList.css';
 import * as XLSX from 'xlsx';
 import {FallingLines} from 'react-loader-spinner'
+import Swal from 'sweetalert2';
+
+
 
 const TaskList = () => {
+
   const [tasks, setTasks] = useState([]);
   const [editTask, setEditTask] = useState({
     id: null,
@@ -27,6 +31,7 @@ const TaskList = () => {
   };
 
   const handleDelete = async (id) => {
+    Swal.fire('Task Deleted')
     try {
       setLoading(true);
       await axios.delete(`https://tricky-pear-prawn.cyclic.app/deletetask/${id}`);
@@ -53,6 +58,7 @@ const TaskList = () => {
         id: null,
         task: '',
       });
+      Swal.fire('Updated')
       fetchTasks();
     } catch (error) {
       console.error('Error updating task:', error);
@@ -69,15 +75,16 @@ const TaskList = () => {
 
   return (
     <div className="task-list-container">
+    
       <h2 className="task-list-header">Task List</h2>
       {loading ? (
-        <FallingLines
+      <div className='loading-container'>  <FallingLines
         color="#4fa94d"
         width={100}
         visible={true}
-        ariaLabel="falling-lines-loading"
-        
-    />
+        ariaLabel="falling-lines-loading" />
+        <p>Loading...Please Wait</p>
+    </div>
       ) : (
         <ul className="task-list">
           {tasks.map((task) => (

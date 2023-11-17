@@ -1,7 +1,12 @@
-.container {
-  background-color: lightgray;
-  min-width: 100%;
-  min-height: 100vh;
+.back-button {
+  margin: 10px 0px 0px 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease-out; 
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.121);
+  transform: rotate(90deg); 
 }
 
 h1 {
@@ -10,9 +15,6 @@ h1 {
   font-size: xxx-large;
   font-family: cursive;
 }
-
-
-
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
   font-size: 16px; 
@@ -24,3 +26,10 @@ body {
   padding: 0;
   background-color: rgb(42, 40, 40);
 }
+
+@media screen and (max-width: 480px){
+  h1 {
+    font-size: medium
+  }
+};
+  

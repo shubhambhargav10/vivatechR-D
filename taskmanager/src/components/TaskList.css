@@ -1,25 +1,29 @@
 .task-list-container {
-    max-width: 600px;
+    max-width: 70vw;
     margin: auto;
-    
+    align-items: center;
+    box-shadow: 0 0 15px white;
+    border-radius: 30px;
   }
   
   .task-list-header {
     text-align: center;
     margin-bottom: 20px;
-    font-size: xxx-large;
+    font-size: xx-large;
     font-family: cursive;
   }
-  
-  
-  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
   .task-list {
     list-style: none;
     padding: 0;
     background-color: #1a1b1cf5;
     color: ghostwhite;
   }
-  
   .task-item {
     padding: 21px;
     border-bottom: 1px solid #ccc;
@@ -39,7 +43,7 @@
     width: 80%;
     margin-right: 10px;
     padding: 10px;
-    border-radius: 16px;
+    border-radius: 12px;
     border: none;
     margin-bottom: 10px;
     font-size: large;
@@ -65,7 +69,9 @@
     background-color: #d74551ed;
   }
   .update-button {
-    margin-left: 32%;
+    margin-left: 10px;
+    width: 80%;
+    border-radius: 16px;
   }
   
   .update-button:hover,
@@ -73,8 +79,6 @@
   .delete-button:hover {
     background-color: #2e302e;
   }
-
-  
   .task-text {
     flex: 1;
   }
@@ -84,8 +88,8 @@
   }
   .export-button {
     width: 100%;
-    padding: 19px;
-    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     background-color: rgb(34 32 32);
     color: white;
     border: none;
@@ -96,6 +100,28 @@
 }
 .export-button:hover {
     background-color:rgb(65 62 62);
+}
 
+@media screen and (max-width:480px) {
+    .task-list-header {
+        font-size: small;
+    }
+    .task-item {
+        padding: 10px;
+        border-radius: 12px;
+        font-size: small;      
+      }
+    .update-button,
+    .edit-button,
+    .delete-button {
+        padding: 4px 10px;
+        border-radius: 3px;
+        font-size: smaller;
+    }
+    .edit-task-input {
+        padding: 5px;
+        border-radius: 3px;
+        font-size: smaller;   
+      }
 }
   
