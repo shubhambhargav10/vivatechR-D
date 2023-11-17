@@ -15,6 +15,7 @@ const TaskList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("completed",completedTasks)
     fetchTasks();
   }, []);
 
@@ -78,7 +79,26 @@ const TaskList = () => {
     setCompletedTasks([...completedTasks, task]);
     Swal.fire('Task Completed. Yay!!')
   };
+  // const moveTaskToCompleted = async (task) => {
+  //   try {
+  //     setLoading(true);
 
+  //     // Update the task status to 'Completed' on the server
+  //     await axios.put(`https://tricky-pear-prawn.cyclic.app/edittask/${task._id}`, {
+  //       task: task.task,
+  //       status: 'completed',
+  //     });
+
+  //     // Add the completed task to the context
+  //     addCompletedTask(task);
+
+     
+  //     fetchTasks();
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.error('Error moving task to completed:', error);
+  //   }
+  // };
   return (
     <div className="task-list-container">
       <h2 className="task-list-header">Task List</h2>
