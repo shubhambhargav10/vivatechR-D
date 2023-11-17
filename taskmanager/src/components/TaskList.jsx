@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TaskList.css';
 import * as XLSX from 'xlsx';
-import {FallingLines} from 'react-loader-spinner'
+import { FallingLines } from 'react-loader-spinner';
 import Swal from 'sweetalert2';
 
-
-
 const TaskList = () => {
-
   const [tasks, setTasks] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
   const [editTask, setEditTask] = useState({
     id: null,
     task: '',
@@ -31,7 +29,7 @@ const TaskList = () => {
   };
 
   const handleDelete = async (id) => {
-    Swal.fire('Task Deleted')
+    Swal.fire('Task Deleted');
     try {
       setLoading(true);
       await axios.delete(`https://tricky-pear-prawn.cyclic.app/deletetask/${id}`);
@@ -58,7 +56,7 @@ const TaskList = () => {
         id: null,
         task: '',
       });
-      Swal.fire('Updated')
+      Swal.fire('Updated');
       fetchTasks();
     } catch (error) {
       console.error('Error updating task:', error);
@@ -66,25 +64,34 @@ const TaskList = () => {
   };
 
   const handleExportToExcel = () => {
-    const data = tasks.map((task) => ({ Task: task.task, Status: task.isComplete ? 'Completed' : 'Pending' }));
+    const data = tasks.map((task) => ({ Task_Id: task._id, Task: task.task, Status: task.isComplete ? 'Completed' : 'Pending' }));
     const ws = XLSX.utils.json_to_sheet(data);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Task List');
     XLSX.writeFile(wb, 'TaskList.xlsx');
   };
 
+  const moveTaskToCompleted = (task) => {
+  
+    const updatedTasks = tasks.filter((t) => t._id !== task._id);
+    setTasks(updatedTasks);
+    setCompletedTasks([...completedTasks, task]);
+    Swal.fire('Task Completed. Yay!!')
+  };
+
   return (
     <div className="task-list-container">
-    
       <h2 className="task-list-header">Task List</h2>
       {loading ? (
-      <div className='loading-container'>  <FallingLines
-        color="#4fa94d"
-        width={100}
-        visible={true}
-        ariaLabel="falling-lines-loading" />
-        <p>Loading...Please Wait</p>
-    </div>
+        <div className='loading-container'>
+          <FallingLines
+            color="#4fa94d"
+            width={100}
+            visible={true}
+            ariaLabel="falling-lines-loading"
+          />
+          <p>Loading...Please Wait</p>
+        </div>
       ) : (
         <ul className="task-list">
           {tasks.map((task) => (
@@ -117,6 +124,11 @@ const TaskList = () => {
                   className="delete-button"
                 >
                   Delete
+                </button>
+                <button className='done-button'
+                  onClick={() => moveTaskToCompleted(task)}
+                >
+                  Done
                 </button>
               </div>
             </li>

@@ -54,7 +54,8 @@
   
   .update-button,
   .edit-button,
-  .delete-button {
+  .delete-button,
+  .done-button {
     background-color: #0d4143;
     color: white;
     border: none;
@@ -70,6 +71,9 @@
   .delete-button {
     background-color: #d74551ed;
   }
+  .done-button {
+    background-color: rgb(195, 185, 3)
+  }
   
   .update-button {
     margin-left: 10px;
@@ -79,7 +83,8 @@
   
   .update-button:hover,
   .edit-button:hover,
-  .delete-button:hover {
+  .delete-button:hover,
+  .done-button:hover {
     background-color: #2e302e;
   }
   
@@ -120,7 +125,7 @@
     }
     .update-button,
     .edit-button,
-    .delete-button {
+    .delete-button,.done-button {
       padding: 4px 10px;
       border-radius: 3px;
       font-size: smaller;
