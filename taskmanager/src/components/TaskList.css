@@ -1,9 +1,8 @@
 .task-list-container {
-    max-width: 70vw;
+    max-width: 100vw;
     margin: auto;
     align-items: center;
-    box-shadow: 0 0 15px white;
-    border-radius: 30px;
+    position: relative; 
   }
   
   .task-list-header {
@@ -12,25 +11,28 @@
     font-size: xx-large;
     font-family: cursive;
   }
+  
   .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
   }
+  
   .task-list {
     list-style: none;
-    padding: 0;
-    background-color: #1a1b1cf5;
+    padding: 0px;
     color: ghostwhite;
+    max-height: calc(100vh - 80px); 
+    overflow-y: auto; 
   }
+  
   .task-item {
     padding: 21px;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 46px;
     font-size: x-large;
     font-family: cursive;
   }
@@ -68,6 +70,7 @@
   .delete-button {
     background-color: #d74551ed;
   }
+  
   .update-button {
     margin-left: 10px;
     width: 80%;
@@ -79,6 +82,7 @@
   .delete-button:hover {
     background-color: #2e302e;
   }
+  
   .task-text {
     flex: 1;
   }
@@ -86,10 +90,11 @@
   .task-actions {
     margin-left: 10px;
   }
+  
   .export-button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 15px;
     background-color: rgb(34 32 32);
     color: white;
     border: none;
@@ -97,31 +102,33 @@
     font-family: cursive;
     font-size: x-large;
     cursor: pointer;
-}
-.export-button:hover {
-    background-color:rgb(65 62 62);
-}
-
-@media screen and (max-width:480px) {
+    position: sticky;
+    bottom: 0; 
+  }
+  
+  .export-button:hover {
+    background-color: rgb(65 62 62);
+  }
+  
+  @media screen and (max-width: 480px) {
     .task-list-header {
-        font-size: small;
+      font-size: small;
     }
     .task-item {
-        padding: 10px;
-        border-radius: 12px;
-        font-size: small;      
-      }
+      padding: 10px;
+      font-size: small;
+    }
     .update-button,
     .edit-button,
     .delete-button {
-        padding: 4px 10px;
-        border-radius: 3px;
-        font-size: smaller;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: smaller;
     }
     .edit-task-input {
-        padding: 5px;
-        border-radius: 3px;
-        font-size: smaller;   
-      }
-}
+      padding: 5px;
+      border-radius: 3px;
+      font-size: smaller;
+    }
+  }
   
