@@ -41,7 +41,7 @@ const TaskList = ({ tasks, completeTask, removeTask, updateTask }) => {
               </div>
             ))
           ) : (
-            <p>Task list is empty</p>
+            <p>No Tasks! </p>
           )}
         </div>
 
