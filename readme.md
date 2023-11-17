@@ -44,10 +44,15 @@ Users can export the entire task list to an Excel file by clicking the "Export L
 
 ## Screenshots
 ![Screenshot 1](ss1.jpg)
+<img src="./ss1.jpg" alt="Screenshot 1" width="400" height="300">
 ![Screenshot 2](ss2.jpg)
+<img src="./ss2.jpg" alt="Screenshot 2" width="400" height="300">
 ![Screenshot 3](ss3.jpg)
+<img src="./ss3.jpg" alt="Screenshot 3" width="400" height="300">
 ![Screenshot 4](ss4.jpg)
+<img src="./ss4.jpg" alt="Screenshot 4" width="400" height="300">
 ![Screenshot 5](ss5.jpg)
+<img src="./ss5.jpg" alt="Screenshot 5" width="400" height="300">
 
 
 ## Live Demo
