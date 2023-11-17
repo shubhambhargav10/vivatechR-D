@@ -1,24 +1,34 @@
 .task-list-container {
     max-width: 600px;
     margin: auto;
+    
   }
   
   .task-list-header {
     text-align: center;
     margin-bottom: 20px;
+    font-size: xxx-large;
+    font-family: cursive;
   }
+  
+  
   
   .task-list {
     list-style: none;
     padding: 0;
+    background-color: #1a1b1cf5;
+    color: ghostwhite;
   }
   
   .task-item {
-    padding: 10px;
+    padding: 21px;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 46px;
+    font-size: x-large;
+    font-family: cursive;
   }
   
   .edit-task {
@@ -26,17 +36,44 @@
   }
   
   .edit-task-input {
-    width: 70%;
+    width: 80%;
     margin-right: 10px;
+    padding: 10px;
+    border-radius: 16px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: large;
+    font-family: cursive;
   }
   
-  .update-button {
-    background-color: #4caf50;
+  .update-button,
+  .edit-button,
+  .delete-button {
+    background-color: #0d4143;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 24px;
     cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+    border-radius: 7px;
+    font-size: medium;
+    font-family: cursive;
   }
+  
+  .delete-button {
+    background-color: #d74551ed;
+  }
+  .update-button {
+    margin-left: 32%;
+  }
+  
+  .update-button:hover,
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #2e302e;
+  }
+
   
   .task-text {
     flex: 1;
@@ -45,18 +82,20 @@
   .task-actions {
     margin-left: 10px;
   }
-  
-  .edit-button,
-  .delete-button {
-    background-color: #f44336;
+  .export-button {
+    width: 100%;
+    padding: 19px;
+    margin-top: 10px;
+    background-color: rgb(34 32 32);
     color: white;
     border: none;
-    padding: 5px 10px;
+    border-radius: 14px;
+    font-family: cursive;
+    font-size: x-large;
     cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .delete-button {
-    background-color: #d9534f;
-  }
+}
+.export-button:hover {
+    background-color:rgb(65 62 62);
+
+}
   

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TaskList.css';
 import * as XLSX from 'xlsx';
+import {FallingLines} from 'react-loader-spinner'
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -9,6 +10,7 @@ const TaskList = () => {
     id: null,
     task: '',
   });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchTasks();
@@ -18,6 +20,7 @@ const TaskList = () => {
     try {
       const response = await axios.get('https://tricky-pear-prawn.cyclic.app/alltasks');
       setTasks(response.data);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching tasks:', error);
     }
@@ -25,6 +28,7 @@ const TaskList = () => {
 
   const handleDelete = async (id) => {
     try {
+      setLoading(true);
       await axios.delete(`https://tricky-pear-prawn.cyclic.app/deletetask/${id}`);
       fetchTasks();
     } catch (error) {
@@ -41,6 +45,7 @@ const TaskList = () => {
 
   const handleUpdate = async () => {
     try {
+      setLoading(true);
       await axios.put(`https://tricky-pear-prawn.cyclic.app/edittask/${editTask.id}`, {
         task: editTask.task,
       });
@@ -53,6 +58,7 @@ const TaskList = () => {
       console.error('Error updating task:', error);
     }
   };
+
   const handleExportToExcel = () => {
     const data = tasks.map((task) => ({ Task: task.task, Status: task.isComplete ? 'Completed' : 'Pending' }));
     const ws = XLSX.utils.json_to_sheet(data);
@@ -64,43 +70,53 @@ const TaskList = () => {
   return (
     <div className="task-list-container">
       <h2 className="task-list-header">Task List</h2>
-      <ul className="task-list">
-        {tasks.map((task) => (
-          <li key={task._id} className="task-item">
-            {task._id === editTask.id ? (
-              <div className="edit-task">
-                <input
-                  type="text"
-                  value={editTask.task}
-                  onChange={(e) =>
-                    setEditTask({ ...editTask, task: e.target.value })
-                  }
-                  className="edit-task-input"
-                />
-                <button onClick={handleUpdate} className="update-button">
-                  Update
+      {loading ? (
+        <FallingLines
+        color="#4fa94d"
+        width={100}
+        visible={true}
+        ariaLabel="falling-lines-loading"
+        
+    />
+      ) : (
+        <ul className="task-list">
+          {tasks.map((task) => (
+            <li key={task._id} className="task-item">
+              {task._id === editTask.id ? (
+                <div className="edit-task">
+                  <input
+                    type="text"
+                    value={editTask.task}
+                    onChange={(e) =>
+                      setEditTask({ ...editTask, task: e.target.value })
+                    }
+                    className="edit-task-input"
+                  />
+                  <button onClick={handleUpdate} className="update-button">
+                    Update
+                  </button>
+                </div>
+              ) : (
+                <div className="task-text">
+                  <span>{task.task}</span>
+                </div>
+              )}
+              <div className="task-actions">
+                <button onClick={() => handleEdit(task)} className="edit-button">
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(task._id)}
+                  className="delete-button"
+                >
+                  Delete
                 </button>
               </div>
-            ) : (
-              <div className="task-text">
-                <span>{task.task}</span>
-              </div>
-            )}
-            <div className="task-actions">
-              <button onClick={() => handleEdit(task)} className="edit-button">
-                Edit
-              </button>
-              <button
-                onClick={() => handleDelete(task._id)}
-                className="delete-button"
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleExportToExcel}>Export List</button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <button className='export-button' onClick={handleExportToExcel}>Export List</button>
     </div>
   );
 };
