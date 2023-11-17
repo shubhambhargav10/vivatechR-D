@@ -16,7 +16,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/alltasks');
+      const response = await axios.get('https://tricky-pear-prawn.cyclic.app/alltasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -25,7 +25,7 @@ const TaskList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/deletetask/${id}`);
+      await axios.delete(`https://tricky-pear-prawn.cyclic.app/deletetask/${id}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -41,7 +41,7 @@ const TaskList = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8000/edittask/${editTask.id}`, {
+      await axios.put(`https://tricky-pear-prawn.cyclic.app/edittask/${editTask.id}`, {
         task: editTask.task,
       });
       setEditTask({

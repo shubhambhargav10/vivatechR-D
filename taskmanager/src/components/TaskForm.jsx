@@ -9,7 +9,7 @@ const TaskForm = () => {
 
   const handleAddTask = async () => {
     try {
-      await axios.post('http://localhost:8000/addtask', { task: taskText });
+      await axios.post('https://tricky-pear-prawn.cyclic.app/addtask', { task: taskText });
       setTaskText('');
     } catch (error) {
       console.error('Error adding task:', error);
