@@ -1,0 +1,13 @@
+.main-container {
+    max-width: 80vh;
+    margin: auto;
+    padding-top: 50px;
+    background-color: rgb(42, 40, 40);
+  }
+  
+  .tasklist-header {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }

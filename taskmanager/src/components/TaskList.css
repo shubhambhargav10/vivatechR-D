@@ -1,0 +1,90 @@
+.task-list {
+    margin-top: 40px;
+  }
+  
+  .task-completed {
+    border: 2px gray;
+  }
+  
+  .task-pending {
+    border: 2px darkslategray;
+  }
+  
+  .task-completed,
+  .task-pending {
+    border-bottom-style: solid;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(42, 40, 40);
+  }
+  
+  .task-pending:first-child,
+  .task-completed:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .task-pending:last-child,
+  .task-completed:last-child {
+    border: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .task-list-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .task-item {
+    font-size: 18px;
+    color: greenyellow;
+    padding-left: 20px;
+  }
+  
+  .task-item p {
+    margin-bottom: 0px;
+  }
+  
+  .task-item del {
+    color: greenyellow;
+  }
+  
+
+  
+  .task-mark-icon {
+    cursor: pointer;
+    font-size: 27px;
+  }
+  
+  .task-mark-icon:hover {
+    color: blue;
+  }
+  
+  .task-edit-delete-icon {
+    padding: 0px 10px;
+  }
+  
+  .task-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .delete-icon,
+  .edit-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 10px;
+    color: greenyellow;
+  }
+  
+  .edit-icon:hover {
+    color: darkgoldenrod;
+  }
+  
+  .delete-icon:hover {
+    color: darkred;
+  }
