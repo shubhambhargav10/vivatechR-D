@@ -43,16 +43,15 @@ Users can export the entire task list to an Excel file by clicking the "Export L
 - Node.js and npm installed on your machine.
 
 ## Screenshots
-![Screenshot 1]
-<img src="./ss1.jpg" alt="Screenshot 1" width="300" height="400">
-![Screenshot 2]
-<img src="./ss2.jpg" alt="Screenshot 2" width="300" height="400">
-![Screenshot 3]
-<img src="./ss3.jpg" alt="Screenshot 3" width="300" height="400">
-![Screenshot 4]
-<img src="./ss4.jpg" alt="Screenshot 4" width="300" height="400">
-![Screenshot 5]
-<img src="./ss5.jpg" alt="Screenshot 5" width="300" height="400">
+![Screenshot 1] <img src="./ss1.jpg" alt="Screenshot 1" width="300" height="400">
+
+![Screenshot 2] <img src="./ss2.jpg" alt="Screenshot 2" width="300" height="400">
+
+![Screenshot 3] <img src="./ss3.jpg" alt="Screenshot 3" width="300" height="400">
+
+![Screenshot 4] <img src="./ss4.jpg" alt="Screenshot 4" width="300" height="400">
+
+![Screenshot 5] <img src="./ss5.jpg" alt="Screenshot 5" width="300" height="400">
 
 
 ## Live Demo
